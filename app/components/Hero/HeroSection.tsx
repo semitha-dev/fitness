@@ -2,8 +2,9 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
+import ScrollingBanner from '../ScrollingBanner/ScrollingBanner';
 
-export default function HomePage() {
+export default function HeroSection() {
   return (
     <div className="w-full">
       {/* Navigation */}
@@ -39,7 +40,7 @@ export default function HomePage() {
         {/* Content */}
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4 gap-6">
           {/* Main Heading */}
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white tracking-wide leading-tight max-w-3xl">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white tracking-wide leading-tight max-w-3xl" style={{ fontFamily: 'var(--font-anta)' }}>
             WORK WITH <br /> PROFESSIONALS
           </h1>
 
@@ -61,6 +62,11 @@ export default function HomePage() {
               Learn more <span className="text-lg">›</span>
             </Link>
           </div>
+        </div>
+
+        {/* Scrolling Banner at Bottom */}
+        <div className="absolute bottom-0 left-0 right-0 z-20">
+          <ScrollingBanner />
         </div>
       </section>
     </div>

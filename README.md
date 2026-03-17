@@ -143,11 +143,11 @@ Click navigation buttons in the hero section to smoothly scroll to:
 
 ## Live Link
 
-[Live Demo](https://your-deployment-url.com)
+[Live Demo](https://fitness-three-umber.vercel.app/)
 
 ## Figma Design
 
-[View Figma Design](https://figma.com/your-design-link)
+[View Figma Design](https://www.figma.com/design/hJn4cgWXVWZSvgvM958l8J/GYM-Website-design?node-id=0-1&t=od1SCTnUuCZrNdLE-1)
 
 ## Author
 

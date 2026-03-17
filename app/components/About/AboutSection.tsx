@@ -9,7 +9,7 @@ export default function AboutSection() {
         {/* Header */}
         <div className="text-center mb-16">
           <p className="text-amber-400 font-bold text-sm md:text-base mb-2">
-            Building Legacy Since 2016
+            Building Legacy Since 2023
           </p>
           <h2 className="text-5xl md:text-6xl font-bold text-white mb-8" style={{ fontFamily: 'var(--font-archivo-black)' }}>
             ABOUT OUR GYM
@@ -36,7 +36,7 @@ export default function AboutSection() {
             {/* Badge - positioned absolutely to overflow */}
             <div className="absolute -bottom-8 -left-8 sm:-bottom-12 sm:-left-12 w-24 h-24 sm:w-32 sm:h-32 bg-amber-400 rounded-full flex items-center justify-center shadow-lg z-10 border-4 border-black">
               <div className="text-center">
-                <p className="text-black font-bold text-lg sm:text-2xl">10</p>
+                <p className="text-black font-bold text-lg sm:text-2xl">3</p>
                 <p className="text-black font-bold text-xs sm:text-sm">YEARS</p>
               </div>
             </div>

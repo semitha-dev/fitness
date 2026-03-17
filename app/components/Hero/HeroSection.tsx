@@ -1,8 +1,29 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import ScrollingBanner from '../ScrollingBanner/ScrollingBanner';
+
+const TypingEffect = ({ text }: { text: string }) => {
+  const [displayedText, setDisplayedText] = useState('');
+
+  useEffect(() => {
+    let index = 0;
+    const timer = setInterval(() => {
+      if (index < text.length) {
+        setDisplayedText(text.slice(0, index + 1));
+        index++;
+      } else {
+        clearInterval(timer);
+      }
+    }, 100);
+
+    return () => clearInterval(timer);
+  }, [text]);
+
+  return displayedText;
+};
 
 export default function HeroSection() {
   return (
@@ -41,7 +62,7 @@ export default function HeroSection() {
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4 gap-6">
           {/* Main Heading */}
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white tracking-wide leading-tight max-w-3xl" style={{ fontFamily: 'var(--font-anta)' }}>
-            WORK WITH <br /> PROFESSIONALS
+            <TypingEffect text="WORK WITH" /> <br /> <TypingEffect text="PROFESSIONALS" />
           </h1>
 
           {/* Subtext */}
@@ -52,7 +73,10 @@ export default function HeroSection() {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 mt-6">
-            <button className="px-8 py-3 bg-amber-400 hover:bg-amber-500 text-black font-bold rounded-full transition-colors">
+            <button
+              onClick={() => document.getElementById('contact-section')?.scrollIntoView({ behavior: 'smooth' })}
+              className="px-8 py-3 bg-amber-400 hover:bg-amber-500 text-black font-bold rounded-full transition-colors"
+            >
               Start Now
             </button>
             <Link

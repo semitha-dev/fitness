@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Anta, Archivo_Black } from "next/font/google";
 import "./globals.css";
+import Image from "next/image";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -40,6 +41,15 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${anta.variable} ${archivoBlack.variable} antialiased`}
       >
+        <div className="absolute top-4 left-4 z-50 rounded-[70px] overflow-hidden" style={{ width: '100px', height: '100px' }}>
+          <Image
+            src="/assets/bodybuilding-emblem-and-gym-logo-design-template-free-vector.jpg"
+            alt="Gym Logo"
+            width={100}
+            height={100}
+            className="w-full h-full object-cover"
+          />
+        </div>
         {children}
       </body>
     </html>

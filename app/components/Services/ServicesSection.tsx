@@ -28,7 +28,7 @@ const services: ServiceCard[] = [
 
 export default function ServicesSection() {
   return (
-    <section className="w-full bg-gray-900 py-20 px-4 md:px-8">
+    <section className="w-full py-20 px-4 md:px-8" style={{ backgroundColor: '#2C2C2C' }}>
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
@@ -42,7 +42,7 @@ export default function ServicesSection() {
           {services.map((service, index) => (
             <div key={index} className="group">
               {/* Image Container */}
-              <div className="relative h-64 md:h-80 rounded-2xl overflow-hidden mb-4">
+              <div className="relative h-64 md:h-80 rounded-3xl overflow-hidden mb-4">
                 <Image
                   src={service.image}
                   alt={service.title}

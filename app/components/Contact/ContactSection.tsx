@@ -4,15 +4,15 @@ import { useState } from 'react';
 
 interface FormData {
   name: string;
-  phone: string;
   email: string;
+  message: string;
 }
 
 export default function ContactSection() {
   const [formData, setFormData] = useState<FormData>({
     name: '',
-    phone: '',
     email: '',
+    message: '',
   });
 
   const [isLoading, setIsLoading] = useState(false);
@@ -41,7 +41,7 @@ export default function ContactSection() {
 
       if (response.ok) {
         setSubmitted(true);
-        setFormData({ name: '', phone: '', email: '' });
+        setFormData({ name: '', email: '', message: '' });
         setTimeout(() => setSubmitted(false), 3000);
       }
     } catch (error) {
@@ -81,17 +81,23 @@ export default function ContactSection() {
             />
           </div>
 
-          {/* Phone Field */}
+          {/* Message Field */}
           <div>
-            <label className="block text-white font-semibold mb-2">Phone Number</label>
-            <input
-              type="tel"
-              name="phone"
-              value={formData.phone}
-              onChange={handleChange}
-              placeholder="eg: 078 3260789"
+            <label className="block text-white font-semibold mb-2">Message</label>
+            <textarea
+              name="message"
+              value={formData.message}
+              onChange={(e) => {
+                const { name, value } = e.target;
+                setFormData((prev) => ({
+                  ...prev,
+                  [name]: value,
+                }));
+              }}
+              placeholder="Tell us about your fitness goals..."
               className="w-full px-4 py-3 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-amber-400"
               style={{ backgroundColor: '#2C2C2C' }}
+              rows={4}
               required
             />
           </div>

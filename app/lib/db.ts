@@ -4,8 +4,8 @@ import path from 'path';
 interface Contact {
   id: string;
   name: string;
-  phone: string;
   email: string;
+  message: string;
   createdAt: string;
 }
 
@@ -20,14 +20,14 @@ async function getContacts(): Promise<Contact[]> {
   }
 }
 
-async function addContact(name: string, phone: string, email: string): Promise<void> {
+async function addContact(name: string, email: string, message: string): Promise<void> {
   const contacts = await getContacts();
 
   const newContact = {
     id: Date.now().toString(),
     name: name,
-    phone: phone,
     email: email,
+    message: message,
     createdAt: new Date().toISOString(),
   };
 

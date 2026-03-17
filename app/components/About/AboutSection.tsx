@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 export default function AboutSection() {
   return (
-    <section className="w-full bg-black py-20 px-4 md:px-8">
+    <section id="about-section" className="w-full bg-black py-20 px-4 md:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
@@ -34,10 +34,10 @@ export default function AboutSection() {
             />
 
             {/* Badge - positioned absolutely to overflow */}
-            <div className="absolute -bottom-12 -left-12 w-32 h-32 bg-amber-400 rounded-full flex items-center justify-center shadow-lg z-10 border-4 border-black">
+            <div className="absolute -bottom-8 -left-8 sm:-bottom-12 sm:-left-12 w-24 h-24 sm:w-32 sm:h-32 bg-amber-400 rounded-full flex items-center justify-center shadow-lg z-10 border-4 border-black">
               <div className="text-center">
-                <p className="text-black font-bold text-2xl">10</p>
-                <p className="text-black font-bold text-sm">YEARS</p>
+                <p className="text-black font-bold text-lg sm:text-2xl">10</p>
+                <p className="text-black font-bold text-xs sm:text-sm">YEARS</p>
               </div>
             </div>
           </div>

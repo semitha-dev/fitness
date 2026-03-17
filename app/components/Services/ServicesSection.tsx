@@ -28,7 +28,7 @@ const services: ServiceCard[] = [
 
 export default function ServicesSection() {
   return (
-    <section className="w-full py-20 px-4 md:px-8" style={{ backgroundColor: '#2C2C2C' }}>
+    <section id="services-section" className="w-full py-20 px-4 md:px-8" style={{ backgroundColor: '#2C2C2C' }}>
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
